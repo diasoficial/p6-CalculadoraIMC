@@ -15,6 +15,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var btnCalcular: Button
     private lateinit var editPeso: EditText
     private lateinit var editAltura: EditText
+    private lateinit var btnCalcularAgua: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
 
@@ -34,6 +35,7 @@ class MainActivity : AppCompatActivity() {
         btnCalcular = findViewById(R.id.btn_calcular)
         editPeso = findViewById(R.id.edit_peso)
         editAltura = findViewById(R.id.edit_altura)
+        btnCalcularAgua = findViewById(R.id.btn_calcular_agua)
 
         //Abrir nova tela
         btnCalcular.setOnClickListener {
@@ -46,6 +48,19 @@ class MainActivity : AppCompatActivity() {
                 //convertendo o que era toString para toDouble
                 intent.putExtra("peso", peso.toDouble())
                 intent.putExtra("altura", altura.toDouble())
+            }
+
+            startActivity(intent)
+        }
+
+        //Abrir nova tela Agua
+        btnCalcularAgua.setOnClickListener {
+            val intent = Intent(this, ResultadoAguaActivity::class.java)
+
+            val peso = editPeso.text.toString()
+
+            if(peso.isNotEmpty()) {
+                intent.putExtra("peso", peso.toDouble())
             }
 
             startActivity(intent)
