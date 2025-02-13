@@ -32,11 +32,11 @@ class TbmActivity : AppCompatActivity() {
             val sexo = bundle.getString("sexo")
 
             if ((sexo == "m") || (sexo == "M" )) {
-                val tmb = 66 + (13.7 * peso) + (5 * altura) - (6.8 * idade)
+                val tmb = (10 * peso) + (6.25 * altura * 100) - (5 * idade) + 5
 
                 textResultMasc.text = "Sua TMB é de $tmb kcal por dia"
             } else if (sexo == "f" || sexo == "F") {
-                val tmb = 655 + (9.6 * peso) + (1.8 * altura) - (4.7 * idade)
+                val tmb = (10 * peso) + (6.25 * altura * 100) - (5 * idade) -161
 
                 textResultFem.text = "Sua TMB é de $tmb kcal por dia"
             }
