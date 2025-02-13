@@ -76,7 +76,7 @@ class MainActivity : AppCompatActivity() {
         btnCalcularTmb.setOnClickListener {
             val intent = Intent(this, TbmActivity::class.java)
 
-            val sexo = editSexo.text
+            val sexo = editSexo.text.toString()
             val peso = editPeso.text.toString()
             val altura = editAltura.text.toString()
             val idade = editIdade.text.toString()
