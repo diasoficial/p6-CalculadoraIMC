@@ -11,7 +11,7 @@
         android:id="@+id/imageView"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="24dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
@@ -21,7 +21,7 @@
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/textInputLayout"
         android:layout_width="0dp"
-        android:layout_height="60dp"
+        android:layout_height="67dp"
         android:layout_marginStart="24dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="24dp"
@@ -36,13 +36,14 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Digite seu peso ex: 60.5"
-            android:inputType="number|numberDecimal" />
+            android:inputType="number|numberDecimal"
+            android:textSize="12sp" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/textInputLayout2"
         android:layout_width="0dp"
-        android:layout_height="60dp"
+        android:layout_height="70sp"
         android:layout_marginStart="24dp"
         android:layout_marginEnd="24dp"
         android:padding="8dp"
@@ -56,13 +57,14 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Digite sua altura ex: 1.70"
-            android:inputType="number|numberDecimal" />
+            android:inputType="number|numberDecimal"
+            android:textSize="12sp" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/textInputLayout5"
         android:layout_width="0dp"
-        android:layout_height="60dp"
+        android:layout_height="70dp"
         android:layout_marginStart="24dp"
         android:layout_marginEnd="16dp"
         android:padding="8dp"
@@ -72,15 +74,17 @@
         app:layout_constraintTop_toBottomOf="@+id/textInputLayout2">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edit_mf"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="M ou F" />
+            android:hint="M ou F"
+            android:textSize="12sp" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/textInputLayout6"
         android:layout_width="0dp"
-        android:layout_height="60dp"
+        android:layout_height="70dp"
         android:layout_marginEnd="16dp"
         android:padding="8dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -89,9 +93,11 @@
         app:layout_constraintTop_toBottomOf="@+id/textInputLayout2">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edit_idade"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Idade" />
+            android:hint="Idade"
+            android:textSize="12sp" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <TextView
@@ -132,7 +138,7 @@
         app:layout_constraintTop_toBottomOf="@+id/btn_calcular" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/btn_calcular_tmb"
         android:layout_width="0dp"
         android:layout_height="50dp"
         android:layout_marginStart="24dp"
@@ -155,7 +161,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_calcular_tmb" />
 
     <Button
         android:id="@+id/button3"

@@ -8,7 +8,6 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import com.google.android.material.textfield.TextInputEditText
 
 class MainActivity : AppCompatActivity() {
 
@@ -16,6 +15,10 @@ class MainActivity : AppCompatActivity() {
     private lateinit var editPeso: EditText
     private lateinit var editAltura: EditText
     private lateinit var btnCalcularAgua: Button
+    private lateinit var editSexo: EditText
+    private lateinit var btnCalcularTmb: Button
+    private lateinit var editIdade: EditText
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
 
@@ -36,10 +39,13 @@ class MainActivity : AppCompatActivity() {
         editPeso = findViewById(R.id.edit_peso)
         editAltura = findViewById(R.id.edit_altura)
         btnCalcularAgua = findViewById(R.id.btn_calcular_agua)
+        editSexo = findViewById(R.id.edit_mf)
+        btnCalcularTmb = findViewById(R.id.btn_calcular_tmb)
+        editIdade = findViewById(R.id.edit_idade)
 
         //Abrir nova tela
         btnCalcular.setOnClickListener {
-            val intent = Intent(this, ResultadoActivity::class.java)
+            val intent = Intent(this, ImcActivity::class.java)
 
             val peso = editPeso.text.toString()
             val altura = editAltura.text.toString()
@@ -55,12 +61,31 @@ class MainActivity : AppCompatActivity() {
 
         //Abrir nova tela Agua
         btnCalcularAgua.setOnClickListener {
-            val intent = Intent(this, ResultadoAguaActivity::class.java)
+            val intent = Intent(this, AguaActivity::class.java)
 
             val peso = editPeso.text.toString()
 
             if(peso.isNotEmpty()) {
                 intent.putExtra("peso", peso.toDouble())
+            }
+
+            startActivity(intent)
+        }
+
+        //Abrir nova tela TMB
+        btnCalcularTmb.setOnClickListener {
+            val intent = Intent(this, TbmActivity::class.java)
+
+            val sexo = editSexo.text
+            val peso = editPeso.text.toString()
+            val altura = editAltura.text.toString()
+            val idade = editIdade.text.toString()
+
+            if (peso.isNotEmpty() && altura.isNotEmpty() && sexo.isNotEmpty() && idade.isNotEmpty()){
+                intent.putExtra("peso", peso.toDouble())
+                intent.putExtra("altura", altura.toDouble())
+                intent.putExtra("idade", idade.toDouble())
+                intent.putExtra("sexo", sexo)
             }
 
             startActivity(intent)

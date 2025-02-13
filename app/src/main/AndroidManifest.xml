@@ -13,10 +13,13 @@
         android:theme="@style/Theme.P6CalculadoraIMC"
         tools:targetApi="31">
         <activity
-            android:name=".ResultadoAguaActivity"
+            android:name=".TbmActivity"
             android:exported="false" />
         <activity
-            android:name=".ResultadoActivity"
+            android:name=".AguaActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ImcActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
