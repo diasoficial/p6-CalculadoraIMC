@@ -16,6 +16,9 @@
             android:name=".FcmActivity"
             android:exported="false" />
         <activity
+            android:name=".FmcActivity"
+            android:exported="false" />
+        <activity
             android:name=".TbmActivity"
             android:exported="false" />
         <activity

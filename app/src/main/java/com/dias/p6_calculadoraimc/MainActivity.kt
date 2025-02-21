@@ -18,7 +18,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var editSexo: EditText
     private lateinit var btnCalcularTmb: Button
     private lateinit var editIdade: EditText
-
+    private lateinit var btnCalcularFcm: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
 
@@ -42,6 +42,7 @@ class MainActivity : AppCompatActivity() {
         editSexo = findViewById(R.id.edit_mf)
         btnCalcularTmb = findViewById(R.id.btn_calcular_tmb)
         editIdade = findViewById(R.id.edit_idade)
+        btnCalcularFcm = findViewById(R.id.btn_calcular_fcm)
 
         //Abrir nova tela
         btnCalcular.setOnClickListener {
@@ -50,7 +51,7 @@ class MainActivity : AppCompatActivity() {
             val peso = editPeso.text.toString()
             val altura = editAltura.text.toString()
 
-            if (peso.isNotEmpty() && altura.isNotEmpty()){
+            if (peso.isNotEmpty() && altura.isNotEmpty()) {
                 //convertendo o que era toString para toDouble
                 intent.putExtra("peso", peso.toDouble())
                 intent.putExtra("altura", altura.toDouble())
@@ -65,7 +66,7 @@ class MainActivity : AppCompatActivity() {
 
             val peso = editPeso.text.toString()
 
-            if(peso.isNotEmpty()) {
+            if (peso.isNotEmpty()) {
                 intent.putExtra("peso", peso.toDouble())
             }
 
@@ -91,5 +92,17 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+        //Abrir nova tela FCM
+        btnCalcularFcm.setOnClickListener {
+            val intent = Intent(this, FcmActivity::class.java)
+
+            val idade = editIdade.text.toString()
+
+            if (idade.isNotEmpty()) {
+                intent.putExtra("idade", idade.toInt())
+            }
+
+            startActivity(intent)
+        }
     }
 }
