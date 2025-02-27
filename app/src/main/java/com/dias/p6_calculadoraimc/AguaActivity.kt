@@ -31,9 +31,10 @@ class AguaActivity : AppCompatActivity() {
 
             textPeso.text = "Peso informado $peso kg"
 
-            val resultado = 35 * peso
+            val resultado = 35 * peso / 1000
+            val resultadoFormatado = String.format("%.1f", resultado)
 
-            textResultadoAgua.text = "Tome $resultado litros de água por dia"
+            textResultadoAgua.text = "Tome $resultadoFormatado lítros de água por dia"
         }
     }
 }

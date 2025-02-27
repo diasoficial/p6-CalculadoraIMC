@@ -41,8 +41,8 @@ class TbmActivity : AppCompatActivity() {
                 textResultFem.text = "Sua TMB é de $tmb kcal por dia"
             }
         } else {
-            textResultFem.text = "Erro: Informações incompletas fornecidas."
-            textResultMasc.text = "Erro: Informações incompletas fornecidas."
+            textResultFem.text = "Informações incompletas fornecidas."
+            textResultMasc.text = "Informações incompletas fornecidas."
         }
     }
 }
